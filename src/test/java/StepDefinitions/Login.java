@@ -19,10 +19,10 @@ import java.time.Duration;
 
 public class Login extends CommonMethods {
 
-    @Given("open the browser and launch HRMS application")
+  /*  @Given("open the browser and launch HRMS application")
     public void open_the_browser_and_launch_hrms_application() {
         openBrowserAndLaunchApplication();
-    }
+    }*/
 
     @When("user enters valid email and valid password")
     public void user_enters_valid_email_and_valid_password() {
@@ -43,11 +43,20 @@ public class Login extends CommonMethods {
         boolean userloggedIn = driver.findElement(By.xpath("//a[contains(text(), 'Welcome')]")).isDisplayed();
         if (userloggedIn) {
             System.out.println("User is logged in Successfully");
+
         }
     }
+  @When("user enters valid {string} and valid {string}")
+    public void user_enters_valid_and_valid(String username, String password) {
+        WebElement usernameTextBox = driver.findElement(By.id("txtUsername"));
+        sendText(usernameTextBox, username);
 
-    @Then("close the browser")
+        WebElement passwordTextBox = driver.findElement(By.id("txtPassword"));
+        sendText(passwordTextBox, password);
+    }
+
+   /* @Then("close the browser")
     public void close_the_browser() {
         closeBrowser();
-    }
+    }*/
 }
