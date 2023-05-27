@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage extends CommonMethods {
 
     public LoginPage(){
-        PageFactory.initElements(driver, this);
+        PageFactory.initElements(driver, this); // Initializing the WebElement of the current page
     }
     @FindBy(id="txtUsername")
    public WebElement usernameTextBox;

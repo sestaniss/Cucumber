@@ -1,0 +1,600 @@
+Class 1-
+
+API - Application Programming interface
+
+non-technical example - Ms - Cafe, (client, server, intermediator)
+semi-technical example - ATM - Bank Example
+
+Technical example-
+
+Client - the one who sends the request (user)
+Server - the one who gives the response to the request
+API - an intermediator who transfers the information from Client-server and from server to client
+
+Presentation layer - UI - user interface - front end - what we see on the screen is the presentation layer.
+Application layer - it is the place where the logic of the application has been written.
+
+API ---- middleware (API Developers / API testers)
+
+Data layer - back end - where data is coming from.
+
+
+
+
+
+
+Client-server architecture
+
+1-tier architecture -
+
+when the presentation layer, application layer, and data layer are available at the same place. 1-tier architecture.
+example - Calculator, notepad, WordPad, games, paint etc.....
+
+2 tier architecture
+when the presentation layer is available on the client's end
+application/data layer is available on the server end
+
+examples - Dominos, McDonalds, PizzaHut, Subway, KFC etc....
+
+3 tier architecture
+When presentation layer is available at client`s end
+Application/business layer is available at another end
+Data layer is available at server end
+
+example - hrms application
+
+n tier architecture
+when we have n number of presentation layers
+n number of application layers
+n number of data layers
+example - Amazon, Instagram, FB etc...
+
+Why do we need API`s?
+
+front end - react, native
+back end - java, python, js
+
+Why we need to use API`s
+1. to make the systems communicate which are developed in different languages, we use API`s.
+2. For security purposes.
+front end - react, native
+    back end - java, python, js
+
+
+Why we need to test APIs?
+to make sure that the same information is coming from the db is reflecting on to the front end
+
+
+alabama to dubai - 123abc
+hyd to VA - 123abc
+
+
+
+front end
+
+middleware
+
+back end
+
+Why do we need to test API`s?
+to make sure that the same information is coming from the db is reflecting on the front end
+
+CRUD operations -
+Create a new record in the database
+retrieve the record from the database
+update a record in the database
+delete a record from the database
+
+we need the address of the API
+we need endpoint
+
+
+DNS - Domain Name Server
+IP address - 2.323.432.212
+
+address of the API
+Url - Uniform Resources Locator
+location of the API - group of similar API`s
+
+end point - specific details
+
+BASE URI - Uniform Rsource Identifier
+
+Base URL: hrm.syntaxtechs.net/syntaxapi/api
+Endpoint - /getAllEmployees.php
+
+base URI - hrm.syntaxtechs.net/syntaxapi/api/getAllEmployees.php
+
+
+=============================================================================================================
+
+Class 2 -
+recap -
+
+API-> middle man - waiter, the one who transfers the message from client to server and from server to client
+client -> the one who sends the request
+server -> the one who responds to this request
+
+client-server architecture -
+
+Presentation Layer -> what we see on the application
+
+Application Layer -> where the logic of the application has been written
+
+Data Layer -> where data is available -> being stored
+
+1 tier
+2 tier
+3 tier
+n tire architecture
+
+Base URI -
+
+base URL -> This will be same in all the cases
+End Point -> This will change with every case
+
+Base URI -> Base URL + End Point
+
+CRUD operation we perform on all the levels
+
+
+API`s which are posted over the internet are called web services
+
+All the web services are API but all the API`s are not web services
+
+
+there are 2 types of web services
+ REST -> Representational state transfer -> data transfer in the form of
+SOAP -> Simple object access protocol
+
+REST web services
+SOAP web services
+
+
+API testing -
+
+HTTP -> Hypertext transfer protocol
+it allows us to communicate over the Internet with different applications
+
+in order to perform operations on the applications, we have to follow HTTP methods (functions)
+
+Create -> POST
+Retrieve -> GET
+Update _> PUT
+Delete -> DELETE
+
+For testing the API - we need admin user first, this user will give permission for other operations
+Base URI - base URL + endpoint
+
+base URL - same
+Endpoint - create Admin user
+
+Base URI -
+
+Base URL - hrm.syntaxtechs.net/syntaxapi/api
+Endpoint - /createUser.php
+Base URI - hrm.syntaxtechs.net/syntaxapi/api/createUser.php
+
+what is body/payload
+{
+  "name": "adminbatch15",
+  "email": "sam.estaniss@gmail.com",
+  "password": "test123"
+}
+
+
+it always either in JSON or XML
+
+REST uses JSON - javascript object notation - it is just a format of data
+
+
+
+200
+201
+
+
+400
+401
+402
+403
+404
+405
+
+==================================================================================================================
+
+Class 3 -
+
+recap -
+
+base url
+end point
+body/payload
+headers (content - type)
+
+In response -
+API status code
+Time of execution
+body of the response
+
+admin user we have created -
+
+from Swagger document we collected all the details to send the request
+POST-> 201 is the status code we should get when we add a record in the system
+
+the body which we have provided is sent in JSON format
+
+
+Authentication and Authorization
+Example : In order to post anything on Facebook/Instagram, first you have to show your identity (login) then only you will be able to perform any operation.
+
+Authentication -
+ it confirms your identity to grant permission in the system
+
+Authorization -
+ It controls whether you are allowed to perform certain operations across the system
+
+Who are you?
+Are you allowed?
+Show your ID.
+What permission do you have?
+
+Stateful Application -> it is the application where the state of the server memory is set to true.
+it allows us to store the credentials in this memory to reduce the total login attempts
+
+the problem with this type of application is, it can be hacked easily.
+
+
+Stateless Application:
+it doesn`t have server memory and will generate token for accessing the application
+
+because there is no server memory, it goes to db directly.
+
+stateless application is more scalable than stateful application
+
+to perform further operations as an admin, we need token which will show our identity as an admin
+
+To generate a token - we need to send an API request
+
+Base URL - hrm.syntaxtechs.net/syntaxapi/api
+End point - /generateToken.php
+
+Base URI - hrm.syntaxtechs.net/syntaxapi/api/generateToken.php
+Type of the method - POST
+
+{
+  "email": "sam.estaniss@gmail.com",
+  "password": "test123"
+}
+
+Header - Content - Type - Application/json
+
+============================================================================================================
+
+Class 4 -
+
+recap -
+
+Authentication and authorization
+
+stateful application -
+
+stateless application -
+
+There are 3 types of token in API -
+
+MAC token
+Bearer token
+Grants
+
+Bearer Token - json web token (JWT)
+
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.
+eyJpYXQiOjE2ODQzNzQ0NTQsImlzcyI6ImxvY2FsaG9zdCIsImV4cCI6MTY4NDQxNzY1NCwidXNlcklkIjoiNTIzMyJ9.
+urwqRgp4FoIKHAB7Goai8L-Qu2-YBvTxYIdmhIQdkbM
+
+bearer token has 3 parts -
+header
+payload
+signature
+
+Header - There are 2 parts in header
+i - type of token
+
+ii - the signing algorithm being used for token.
+
+body/payload - it contains information about the issuer, expiration time, user id, issue time
+
+signature - it is used to verify the message wasn`t changed along the way.
+
+to perform crud operations -
+
+create an employee -
+base URI - URL + endpoint
+hrm.syntaxtechs.net/syntaxapi/api/createEmployee.php
+
+Type of method -
+body -
+
+{
+  "emp_firstname": "nelena",
+  "emp_lastname": "faria",
+  "emp_middle_name": "ms",
+  "emp_gender": "F",
+  "emp_birthday": "2012-05-20",
+  "emp_status": "Confirmed",
+  "emp_job_title": "Engineer"
+}
+
+content type - application/json
+
+
+we have created an employee -
+
+data is not stored in DB properly
+data is available in DB but API is not giving us the correct data
+
+after every single operation, we need to perform GET call to check the latest changes are updated or not
+
+create an employee -> Get the created employee
+
+
+GET CREATED EMPLOYEE -
+
+base URI - url + endpoint -
+hrm.syntaxtechs.net/syntaxapi/api/getOneEmployee.php
+
+Type of method - GET
+
+query parameter - employee_id = 53187A
+Authorization
+
+response code 200
+
+
+in any URL, whatever comes after ? is my query parameter
+and whatever comes before ? is my path parameter
+
+in stateful application we need to provide in authorization
+
+base uri = hrm.syntaxtechs.net/syntaxapi/api/getOneEmployee.php
+
+Type of method = GET
+
+authorization = token
+
+status code in response = 200
+
+In homework - create an api request for
+get all employees
+get all job title
+
+create an employee -> Get the created employee
+Get All Employee Status
+
+UPDATE AN EMPLOYEE
+
+Base URI = hrm.syntaxtechs.net/syntaxapi/api/updateEmployee.php
+Type of request = PUT
+
+{
+  "employee_id": "53187A",
+  "emp_firstname": "Sam",
+  "emp_lastname": "Estaniss",
+  "emp_middle_name": "M",
+  "emp_gender": "M",
+  "emp_birthday": "1990-12-16",
+  "emp_status": "Working",
+  "emp_job_title": "Engineer"
+}
+
+content-type = application/json
+authorization = token
+
+status code = 200
+
+Create an employee -> Get the created employee
+Get ALL Employee status
+Update the employee -> Get the updated employee
+Update Partial employee
+
+Partial employee update -
+
+Base URI = hrm.syntaxtechs.net/syntaxapi/api/updatePartialEmplyeesDetails.php
+Type of Method = PATCH
+Body =
+
+{
+  "employee_id": "53187A",
+
+  "emp_job_title": "Manager"
+}
+
+content-type = application/json
+authorization = token
+
+
+DELETE AN EMPLOYEE
+
+Base URI - hrm.syntaxtechs.net/syntaxapi/api/deleteEmployee.php
+Type of Metho - DELETE
+Authorization-
+employee_id -
+
+response code is 200
+
+create an employee -> Get the created employee
+Get ALL employee status
+update an employee -> Get the updated employee
+update partial employee -> Get partially updated employee
+Delete employee -> Get deleted employee
+(when you retrieve deleted employee from the db, it will give you 400 since the data is already deleted from db)
+
+
+Cookies -> cookies are small blocks of code created by a web server. While a user is browsing a website and placed on the user`s computer by browser.
+
+data stored in cookies will be used for 2 reasons -
+in house product development
+3rd party cookies
+
+================================================================================================================
+class 5 -
+
+recap -
+
+CRUD -
+3 types of token -
+Mac token
+Bearer token
+Grants
+
+3 parts of bearer token
+header
+payload
+signature
+
+PUT -> response code is 200
+PATCH -> response code 201
+
+query parameter -> key and vlaue
+id=4,
+
+path parameter
+www.amazon.com/electronics/offers/
+
+DEV, TEST, STAGING, PROD
+
+to add the environment, we need to use environment tab
+but to add all the endpoints, we need to use globals
+
+to run collection
+select run collection open
+select checkbox for the request you want to execute
+de select remaining requests
+iterations - 1 number of executions for collection
+
+Java script language function
+
+function myFunction(p1, p2) {
+  // block of code
+  console.log("hello");
+  return p1 * p2;
+}
+
+
+Postman uses chai assertion libary for assertions
+
+pm is the postman object which comes with built-in JavaScript API
+
+in this pm object we will be having all the methods/functions of chai library
+
+pm.expect -> if you  are expecting any value/field/key in the response
+pm.assert -
+pm.should -
+
+pm.test -> this is the test considered in postman
+
+
+HomeWork - verify the status code in PUT and PATCH
+
+put assertions in all the request for time check and string check
+
+===============================================================================================================
+
+class 6 -
+
+recap -
+
+How to run collection -
+as per the requirement, we can include/exclude the API request and can run via collection to get the results in one time.
+
+we can select the environment in Postman - we provide variable of the environment along with the base URL
+in globals, we usually pass our endpoints and token
+
+Postman has a built-in Assertion library called Chai -
+
+Functions of Assertioins can be found under snippets column in test
+
+Majorly -> we need to focus on these Assertions
+API status code
+Response body (any key, any value)
+Response headers (any header)
+Response time
+
+REST Assured API
+
+Rest web service, the REST web service allows data to be sent in JSON format/object
+JSON object consists and value pairs
+
+Rest assured is DSL (Domain Specific Language) which is a Java library used to automate REST API.
+
+REST ASSURED library follows BDD (Behavioral Driven Development) approach.
+
+In cucumber
+Given -> Pre Condition
+When -> Actions
+Then -> Result/Expected Output
+
+In REST ASSURED API
+Given -> Preparing the request
+When -> Make a call / send the request / hitting the endpoint
+Then -> Verification/Assertions
+
+
+
+In Postman -> base URI = Base URL + endpoint
+
+in rest assured API
+base URI = base URL
+
+hamcrest matchers ->
+hamcrest is a popular framework that helps us to create matcher objects.
+It is used for writing tests and performs testing in programming. Hamcrest is mainly
+used with other testing frameworks like junit.
+
+Hamcrest matchers -> class that contains methods to perform assertions
+
+JsonPath vs jsonPath()? -> o
+JsonPath is a class
+jsonPath() is a method that belongs to Jsonpath class
+
+=====================================================================
+Class 7 -
+
+integrated Rest Assured API library with framework
+
+BDD ->
+Given -> prepare the request
+When -> make a call / hitting the endpoint
+Then -> verification / Assertion
+
+base URI = base URL
+because given keyword is used to create a request
+and when keyword is to send the request that is why both cannot be in the base URI
+
+request specification -> to prepare the request
+response -> after sending the request, response will be stored in this variable
+
+hamcrest matchers ->
+===============================================================================================================
+Class 8 -
+
+Recap -
+
+Framework - everything has to be parameterized
+
+
+@Test - Junit, to execute API test cases in hard coded examples class
+
+
+to integrate API in framework, we have to write API scenarios in feature file
+
+
+JWT - Jason Web Token
+
+
+to generate token, we have created generate token steps class
+
+
+
+
+

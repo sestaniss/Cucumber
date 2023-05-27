@@ -36,3 +36,14 @@ Feature: Login Functionalities
       | admin    | Hum@nhrm123 |
       | ADMIN    | Hum@nhrm123 |
       | Jason    | Hum@nhrm123 |
+
+    #hard Code
+    # config file
+  #================
+    #Cucumber Expression [ limited set of test data]
+    #Scenario Outline    [Parametrization],[Data Driven Testing][Browser will open
+    # and close number of times we have test data in Examples table]
+    #data Table
+
+    # Page Object Model : An object Repository [ It stores or holds all
+    # the webElements specific to a particular page]
