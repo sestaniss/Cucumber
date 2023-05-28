@@ -592,7 +592,19 @@ to integrate API in framework, we have to write API scenarios in feature file
 JWT - Jason Web Token
 
 
-to generate token, we have created generate token steps class
+to generate token, we have created generate token steps class.
+
+===============================================================================================================
+
+Class 9 -
+
+Recap -
+using different (json) payload to create an employee
+created constants class to keep all the constants such as end points, headers, uri
+created api payload class - to send all the payload from the method of this class
+retrieved the created employee and verify all the details of it
+
+
 
 
 
