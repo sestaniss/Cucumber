@@ -6,7 +6,7 @@ Feature: Employee
     When user clicks on PIM option
     And user clicks on add employee button
 
-  @testcase2 @smoke
+  @testcase2
   Scenario: Adding a new Employee
     #Given open the browser and launch HRMS application
     #When user enters valid email and valid password
